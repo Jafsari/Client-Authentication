@@ -36,7 +36,7 @@ export function signoutUser(){
 
 export function signupUser({ email,password }){
   return function(dispatch){
-    axios.post(`${API_URL}/signin`,{ email, password })
+    axios.post(`${API_URL}/signup`,{ email, password })
     .then(response => {
       dispatch({type:AUTH_USER}) // Changing the state
       localStorage.setItem('token',response.data.token) // saving the token that was sent back from
